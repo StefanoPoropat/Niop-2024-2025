@@ -1,0 +1,11 @@
+C:\Users\ucenik\Downloads\cigo\formaStudenti\bin\Debug\formaStudenti.exe.config
+C:\Users\ucenik\Downloads\cigo\formaStudenti\bin\Debug\formaStudenti.exe
+C:\Users\ucenik\Downloads\cigo\formaStudenti\bin\Debug\formaStudenti.pdb
+C:\Users\ucenik\Downloads\cigo\formaStudenti\obj\Debug\formaStudenti.csproj.AssemblyReference.cache
+C:\Users\ucenik\Downloads\cigo\formaStudenti\obj\Debug\formaStudenti.Form1.resources
+C:\Users\ucenik\Downloads\cigo\formaStudenti\obj\Debug\formaStudenti.Properties.Resources.resources
+C:\Users\ucenik\Downloads\cigo\formaStudenti\obj\Debug\formaStudenti.csproj.GenerateResource.cache
+C:\Users\ucenik\Downloads\cigo\formaStudenti\obj\Debug\formaStudenti.csproj.CoreCompileInputs.cache
+C:\Users\ucenik\Downloads\cigo\formaStudenti\obj\Debug\formaStudenti.exe
+C:\Users\ucenik\Downloads\cigo\formaStudenti\obj\Debug\formaStudenti.pdb
+C:\Users\ucenik\Downloads\cigo\formaStudenti\obj\Debug\formaStudenti.Properties.formName.resources
