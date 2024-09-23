@@ -1,0 +1,10 @@
+C:\Users\ucenik\Downloads\cigo\4textBox\bin\Debug\4textBox.exe.config
+C:\Users\ucenik\Downloads\cigo\4textBox\bin\Debug\4textBox.exe
+C:\Users\ucenik\Downloads\cigo\4textBox\bin\Debug\4textBox.pdb
+C:\Users\ucenik\Downloads\cigo\4textBox\obj\Debug\4textBox.csproj.AssemblyReference.cache
+C:\Users\ucenik\Downloads\cigo\4textBox\obj\Debug\_4textBox.Form1.resources
+C:\Users\ucenik\Downloads\cigo\4textBox\obj\Debug\_4textBox.Properties.Resources.resources
+C:\Users\ucenik\Downloads\cigo\4textBox\obj\Debug\4textBox.csproj.GenerateResource.cache
+C:\Users\ucenik\Downloads\cigo\4textBox\obj\Debug\4textBox.csproj.CoreCompileInputs.cache
+C:\Users\ucenik\Downloads\cigo\4textBox\obj\Debug\4textBox.exe
+C:\Users\ucenik\Downloads\cigo\4textBox\obj\Debug\4textBox.pdb
