@@ -19,7 +19,6 @@ namespace richTextBoxKontrola
             catch (Exception)
             {
                 MessageBox.Show("An error has occured. Loading failed.");
-                txtBox.LoadFile(@"D:\visual studio\richTextBox\Temp.rtf");
             }
         }
 
@@ -33,7 +32,6 @@ namespace richTextBoxKontrola
             catch (Exception)
             {
                 MessageBox.Show("An error has occured. Saving failed.");
-                txtBox.SaveFile(@"D:\visual studio\richTextBox\Temp.rtf");
             }
         }
 
