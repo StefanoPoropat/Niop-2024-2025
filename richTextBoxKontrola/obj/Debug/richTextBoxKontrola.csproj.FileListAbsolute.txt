@@ -1,0 +1,10 @@
+C:\Users\Stefano\Downloads\richTextBoxKontrola\richTextBoxKontrola\bin\Debug\richTextBoxKontrola.exe.config
+C:\Users\Stefano\Downloads\richTextBoxKontrola\richTextBoxKontrola\bin\Debug\richTextBoxKontrola.exe
+C:\Users\Stefano\Downloads\richTextBoxKontrola\richTextBoxKontrola\bin\Debug\richTextBoxKontrola.pdb
+C:\Users\Stefano\Downloads\richTextBoxKontrola\richTextBoxKontrola\obj\Debug\richTextBoxKontrola.csproj.AssemblyReference.cache
+C:\Users\Stefano\Downloads\richTextBoxKontrola\richTextBoxKontrola\obj\Debug\richTextBoxKontrola.Form1.resources
+C:\Users\Stefano\Downloads\richTextBoxKontrola\richTextBoxKontrola\obj\Debug\richTextBoxKontrola.Properties.Resources.resources
+C:\Users\Stefano\Downloads\richTextBoxKontrola\richTextBoxKontrola\obj\Debug\richTextBoxKontrola.csproj.GenerateResource.cache
+C:\Users\Stefano\Downloads\richTextBoxKontrola\richTextBoxKontrola\obj\Debug\richTextBoxKontrola.csproj.CoreCompileInputs.cache
+C:\Users\Stefano\Downloads\richTextBoxKontrola\richTextBoxKontrola\obj\Debug\richTextBoxKontrola.exe
+C:\Users\Stefano\Downloads\richTextBoxKontrola\richTextBoxKontrola\obj\Debug\richTextBoxKontrola.pdb
