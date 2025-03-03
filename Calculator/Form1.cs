@@ -7,59 +7,46 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
-        private string mat = ""; // Stores the entered expression
-        private readonly char[] operators = { '+', '-', '*', '/' }; // Array of valid operators
+        private string mat = "";
+        private readonly char[] operators = { '+', '-', '*', '/' };
 
         public Form1()
         {
             InitializeComponent();
         }
 
-        // Appends a value to the expression and updates the display
         private void AppendToMat(string value)
         {
             mat += value;
             lblDisplay.Text = mat;
         }
 
-        // Returns true if the last character is an operator
         private bool IsLastCharOperator()
         {
             return mat.Length > 0 && operators.Contains(mat.Last());
         }
 
-        // Gets the last number segment after the last operator
         private string GetLastNumberSegment()
         {
             int lastOperatorIndex = mat.LastIndexOfAny(operators);
             return lastOperatorIndex == -1 ? mat : mat.Substring(lastOperatorIndex + 1);
         }
 
-        // Ensures 0 is added correctly (e.g., prevents "00", but allows "0.1")
         private bool CanAddZero()
         {
             string lastSegment = GetLastNumberSegment();
-
-            // Allow zero if it's after a decimal (e.g., "0.1", "2.03")
             if (lastSegment.Contains(".")) return true;
-
-            // Prevent multiple leading zeros in a whole number
+            if (mat.Length == 0 || IsLastCharOperator()) return true;
             return lastSegment.Length > 0 && lastSegment != "0";
         }
 
-        // Ensures decimals are added correctly (e.g., prevents "5.3.2")
         private bool CanAddDecimal()
         {
             string lastSegment = GetLastNumberSegment();
-
-            // Allow decimal at the beginning or after an operator
             if (lastSegment.Length == 0) return true;
-
-            // Allow decimal only if the segment does NOT already contain one
             return !lastSegment.Contains(".");
         }
 
-        // Number buttons
         private void button1_Click(object sender, EventArgs e) => AppendToMat("1");
         private void button2_Click(object sender, EventArgs e) => AppendToMat("2");
         private void button3_Click(object sender, EventArgs e) => AppendToMat("3");
@@ -69,43 +56,30 @@ namespace Calculator
         private void button7_Click(object sender, EventArgs e) => AppendToMat("7");
         private void button8_Click(object sender, EventArgs e) => AppendToMat("8");
         private void button9_Click(object sender, EventArgs e) => AppendToMat("9");
-        private void btnEqual_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                if (mat.Length == 0 || IsLastCharOperator()) return; // Prevent invalid calculations
 
-                // Replace ',' with '.' in case of incorrect formatting
-                string formattedExpression = mat.Replace(",", ".");
-
-                DataTable dt = new DataTable();
-                var result = dt.Compute(formattedExpression, "");
-
-                // Convert result to string and format correctly
-                lblDisplay.Text = Convert.ToDouble(result).ToString();
-                mat = lblDisplay.Text; // Store the result for further calculations
-            }
-            catch
-            {
-                lblDisplay.Text = "Error";
-                mat = "";
-            }
-        }
-
-
-        // Zero button (prevents leading zero issues)
         private void button0_Click(object sender, EventArgs e)
         {
-            if (CanAddZero()) AppendToMat("0");
+            if (CanAddZero())
+            {
+                AppendToMat("0");
+            }
         }
 
-        // Decimal button (prevents multiple decimals in a number)
         private void btnDecimal_Click(object sender, EventArgs e)
         {
-            if (CanAddDecimal()) AppendToMat(".");
+            if (CanAddDecimal())
+            {
+                if (mat.Length == 0 || IsLastCharOperator())
+                {
+                    AppendToMat("0.");
+                }
+                else
+                {
+                    AppendToMat(".");
+                }
+            }
         }
 
-        // Operator buttons (prevents multiple consecutive operators)
         private void btnPlus_Click(object sender, EventArgs e)
         {
             if (!IsLastCharOperator()) AppendToMat("+");
@@ -126,14 +100,12 @@ namespace Calculator
             if (!IsLastCharOperator()) AppendToMat("/");
         }
 
-        // Clears everything
         private void btnClear_Click(object sender, EventArgs e)
         {
             mat = "";
-            lblDisplay.Text = "0"; // Reset display
+            lblDisplay.Text = "0";
         }
 
-        // Deletes the last character (backspace)
         private void buttonDelete_Click(object sender, EventArgs e)
         {
             if (mat.Length > 0)
@@ -143,22 +115,40 @@ namespace Calculator
             }
         }
 
-        // Clears the last entered number (not the entire expression)
         private void btnCE_Click(object sender, EventArgs e)
         {
-            if (mat.Length == 0) return;
+            mat = "0";
+            lblDisplay.Text = "0";
+        }
 
-            int lastOperatorIndex = mat.LastIndexOfAny(operators);
-            if (lastOperatorIndex == -1) // If no operator, clear everything
+        private void btnEqual_Click(object sender, EventArgs e)
+        {
+            try
             {
+                if (mat.Length == 0 || IsLastCharOperator()) return;
+                string formattedExpression = mat.Replace(",", ".");
+
+                if (formattedExpression.Contains("/0"))
+                {
+                    string[] parts = formattedExpression.Split('/');
+                    if (parts.Length > 1 && parts.Last() == "0")
+                    {
+                        lblDisplay.Text = "Error: Division by zero";
+                        mat = "";
+                        return;
+                    }
+                }
+
+                DataTable dt = new DataTable();
+                var result = dt.Compute(formattedExpression, "");
+                lblDisplay.Text = Convert.ToDouble(result).ToString();
+                mat = lblDisplay.Text;
+            }
+            catch
+            {
+                lblDisplay.Text = "Error";
                 mat = "";
             }
-            else
-            {
-                mat = mat.Substring(0, lastOperatorIndex + 1);
-            }
-
-            lblDisplay.Text = mat.Length > 0 ? mat : "0";
         }
     }
 }
